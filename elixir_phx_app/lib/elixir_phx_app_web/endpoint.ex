@@ -7,7 +7,7 @@ defmodule ElixirPhxAppWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_elixir_phx_app_key",
-    signing_salt: "sBZius7g"
+    signing_salt: "/komc+qD"
   ]
 
   socket "/socket", ElixirPhxAppWeb.UserSocket,
@@ -29,8 +29,6 @@ defmodule ElixirPhxAppWeb.Endpoint do
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
-    socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
-    plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
     plug Phoenix.Ecto.CheckRepoStatus, otp_app: :elixir_phx_app
   end
