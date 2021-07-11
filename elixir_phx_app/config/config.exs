@@ -15,8 +15,7 @@ config :elixir_phx_app, ElixirPhxAppWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "z59PVjqlpwvSyw4l0ER0dBh9xq39cO25P1XxyH6XsytuUqRvPVR1xMKaqzELVrRt",
   render_errors: [view: ElixirPhxAppWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: ElixirPhxApp.PubSub,
-  live_view: [signing_salt: "DIOnrKl9"]
+  pubsub_server: ElixirPhxApp.PubSub
 
 # Configures Elixir's Logger
 config :logger, :console,

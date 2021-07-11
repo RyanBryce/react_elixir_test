@@ -2,8 +2,8 @@ use Mix.Config
 
 # Configure your database
 config :elixir_phx_app, ElixirPhxApp.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("POSTGRES_NAME"),
+  password: System.get_env("POSTGRES_PW"),
   database: "elixir_phx_app_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
@@ -20,15 +20,7 @@ config :elixir_phx_app, ElixirPhxAppWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [
-    node: [
-      "node_modules/webpack/bin/webpack.js",
-      "--mode",
-      "development",
-      "--watch-stdin",
-      cd: Path.expand("../assets", __DIR__)
-    ]
-  ]
+  watchers: []
 
 # ## SSL Support
 #
@@ -53,17 +45,6 @@ config :elixir_phx_app, ElixirPhxAppWeb.Endpoint,
 # If desired, both `http:` and `https:` keys can be
 # configured to run both http and https servers on
 # different ports.
-
-# Watch static and templates for browser reloading.
-config :elixir_phx_app, ElixirPhxAppWeb.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
-      ~r"priv/gettext/.*(po)$",
-      ~r"lib/elixir_phx_app_web/(live|views)/.*(ex)$",
-      ~r"lib/elixir_phx_app_web/templates/.*(eex)$"
-    ]
-  ]
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

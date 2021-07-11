@@ -13,12 +13,6 @@ defmodule ElixirPhxAppWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", ElixirPhxAppWeb do
-    pipe_through :browser
-
-    get "/", PageController, :index
-  end
-
   # Other scopes may use custom stacks.
   # scope "/api", ElixirPhxAppWeb do
   #   pipe_through :api
